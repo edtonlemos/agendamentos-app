@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Agendamento } from '../models/agendamento';
 
 @Component({
   selector: 'app-agendamento-lista',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./agendamento-lista.component.css']
 })
 export class AgendamentoListaComponent {
-  agendamento: string = "Agendamento de Teste"
+  agendamento: Agendamento = {
+    id: 1,
+    titulo: 'Consulta médica',
+    data: new Date('03/10/2025')
+  };
 }

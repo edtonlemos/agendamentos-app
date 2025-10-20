@@ -1,27 +1,87 @@
 # AgendamentosApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
+Sistema web para gerenciamento de agendamentos, desenvolvido em Angular. O objetivo é permitir o cadastro, visualização e gerenciamento de agendamentos de forma simples e eficiente.
 
-## Development server
+## Índice
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Como Executar](#como-executar)
+- [Testes](#testes)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Sobre o Projeto
 
-## Build
+O **AgendamentosApp** é uma aplicação web construída com [Angular](https://angular.io/) para facilitar o controle de agendamentos. O projeto está em constante evolução, recebendo novas funcionalidades e melhorias técnicas.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Funcionalidades
 
-## Running unit tests
+- Listagem de agendamentos
+- Cadastro de novos agendamentos *(em desenvolvimento)*
+- Edição e exclusão de agendamentos *(em breve)*
+- Interface responsiva
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> **Nota:** Novas funcionalidades serão automaticamente documentadas aqui conforme forem lançadas.
 
-## Running end-to-end tests
+## Estrutura do Projeto
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+src/
+  app/
+    agendamento-lista/
+      agendamento-lista.component.ts      # Componente de listagem de agendamentos
+      agendamento-lista.component.html
+      agendamento-lista.component.css
+    models/
+      agendamento.ts                      # Modelo de dados de agendamento
+    app.component.ts                      # Componente principal
+    app.module.ts                         # Módulo principal
+  assets/                                 # Recursos estáticos
+  styles.css                              # Estilos globais
+  main.ts                                 # Bootstrap da aplicação
+```
 
-## Further help
+- Veja o componente de listagem em [`AgendamentoListaComponent`](src/app/agendamento-lista/agendamento-lista.component.ts).
+- O modelo de dados está em [`agendamento.ts`](src/app/models/agendamento.ts).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Como Executar
+
+1. Instale as dependências:
+   ```sh
+   npm install
+   ```
+2. Inicie o servidor de desenvolvimento:
+   ```sh
+   ng serve
+   ```
+3. Acesse `http://localhost:4200/` no navegador.
+
+## Testes
+
+- Para rodar os testes unitários:
+  ```sh
+  ng test
+  ```
+- Os testes estão localizados em arquivos `.spec.ts`, como [`app.component.spec.ts`](src/app/app.component.spec.ts) e [`agendamento-lista.component.spec.ts`](src/app/agendamento-lista/agendamento-lista.component.spec.ts).
+
+## Contribuição
+
+Contribuições são bem-vindas! Siga os passos abaixo:
+
+1. Fork este repositório
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Commit suas alterações (`git commit -m 'feat: nova feature'`)
+4. Push para o branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT.
+
+---
+
+> Documentação gerada automaticamente. Novas funcionalidades e detalhes técnicos serão atualizados conforme o projeto evolui.
