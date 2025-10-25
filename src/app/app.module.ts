@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AgendamentoListaComponent } from './agendamento-lista/agendamento-lista.component';
 
@@ -10,7 +10,8 @@ import { AgendamentoListaComponent } from './agendamento-lista/agendamento-lista
     AgendamentoListaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

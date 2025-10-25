@@ -4,12 +4,40 @@ import { Agendamento } from '../models/agendamento';
 @Component({
   selector: 'app-agendamento-lista',
   templateUrl: './agendamento-lista.component.html',
-  styleUrls: ['./agendamento-lista.component.css']
+  styleUrls: ['./agendamento-lista.component.css'],
 })
 export class AgendamentoListaComponent {
-  agendamento: Agendamento = {
-    id: 1,
-    titulo: 'Consulta médica',
-    data: new Date('03/10/2025')
-  };
+  novoAgendamentoTitulo: string = '';
+  novoAgendamentoData: Date = new Date();
+  agendamentos: Agendamento[] = [];
+
+  adicionarAgendamento() {
+    if (this.novoAgendamentoTitulo.trim().length && this.novoAgendamentoData) {
+      let novoAgendamento: Agendamento = {
+        id: Date.now(),
+        titulo: this.novoAgendamentoTitulo,
+        data: this.novoAgendamentoData,
+      };
+      this.agendamentos.push(novoAgendamento);
+
+      alert(
+        'Novo apontamento registrado com sucesso!' +
+          '\nTítulo: ' +
+          this.novoAgendamentoTitulo +
+          '\nData: ' +
+          this.novoAgendamentoData +
+          '\nTamanho total de apontamentos: ' +
+          this.agendamentos.length
+      );
+
+      this.limparCampos();
+    } else {
+      alert('Por favor, preencha a descrição do apontamento.');
+    }
+  }
+
+  limparCampos() {
+    this.novoAgendamentoTitulo = '';
+    this.novoAgendamentoData = new Date();
+  }
 }

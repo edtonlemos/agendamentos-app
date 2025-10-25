@@ -1,3 +1,13 @@
-<p>{{agendamento.id}}</p>
-<p>{{agendamento.titulo}}</p>
-<p>{{agendamento.data}}</p>
+<div>
+  <input [(ngModel)] = "novoAgendamentoTitulo" placeholder="Descrição"/>
+  <input [(ngModel)] = "novoAgendamentoData" type="date" placeholder="Data"/>
+  <button (click)="adicionarAgendamento()">Adicionar</button>
+</div>
+
+<div>
+  <ul>
+    <li *ngFor="let agendamento of agendamentos">
+      {{ agendamento.titulo }} - {{ agendamento.data | date:'dd.MM.yyyy' }} - {{agendamento.id}}
+    </li>
+  </ul>
+</div>
