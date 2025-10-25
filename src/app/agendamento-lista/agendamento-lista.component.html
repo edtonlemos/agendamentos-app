@@ -1,13 +1,18 @@
 <div>
-  <input [(ngModel)] = "novoAgendamentoTitulo" placeholder="Descrição"/>
-  <input [(ngModel)] = "novoAgendamentoData" type="date" placeholder="Data"/>
+  <input
+    [(ngModel)]="novoAgendamentoTitulo"
+    placeholder="Descrição"
+    title="Descrição do novo agendamento"
+  />
+  <input [(ngModel)]="novoAgendamentoData" type="date" placeholder="Data" />
   <button (click)="adicionarAgendamento()">Adicionar</button>
 </div>
 
 <div>
   <ul>
-    <li *ngFor="let agendamento of agendamentos">
-      {{ agendamento.titulo }} - {{ agendamento.data | date:'dd.MM.yyyy' }} - {{agendamento.id}}
+    <li *ngFor="let agendamento of agendamentos; index as i">
+      {{ agendamento.titulo }} - {{ agendamento.data | date : "dd/MM/yyyy" }}
+      <button (click)="removerAgendamento(i)">Remover</button>
     </li>
   </ul>
 </div>

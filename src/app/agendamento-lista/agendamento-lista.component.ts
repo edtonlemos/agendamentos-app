@@ -25,18 +25,20 @@ export class AgendamentoListaComponent {
           '\nTítulo: ' +
           this.novoAgendamentoTitulo +
           '\nData: ' +
-          this.novoAgendamentoData +
-          '\nTamanho total de apontamentos: ' +
-          this.agendamentos.length
+          this.novoAgendamentoData
       );
 
-      this.limparCampos();
+      this.limparCamposNovoAgendamento();
     } else {
       alert('Por favor, preencha a descrição do apontamento.');
     }
   }
 
-  limparCampos() {
+  removerAgendamento(index: number) {
+    this.agendamentos.splice(index, 1);
+  }
+
+  private limparCamposNovoAgendamento() {
     this.novoAgendamentoTitulo = '';
     this.novoAgendamentoData = new Date();
   }

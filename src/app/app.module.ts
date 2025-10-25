@@ -5,15 +5,9 @@ import { AppComponent } from './app.component';
 import { AgendamentoListaComponent } from './agendamento-lista/agendamento-lista.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AgendamentoListaComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
+  declarations: [AppComponent, AgendamentoListaComponent],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
